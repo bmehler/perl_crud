@@ -1,6 +1,6 @@
 #!/bin/sh
 
-#use lib "/Applications/MAMP/Library/lib/perl5/site_perl/5.24.0/darwin-2level";
+use lib "/Applications/MAMP/Library/lib/perl5/site_perl/5.24.0/darwin-2level";
 
 
 
