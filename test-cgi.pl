@@ -1,17 +1,10 @@
 #!/bin/sh
 
-use lib "/Applications/MAMP/Library/lib/perl5/site_perl/5.24.0/darwin-2level";
-
-
-
-
 # disable filename globbing
 set -f
 
 echo "Content-type: text/plain; charset=iso-8859-1"
 echo
-
-echo "\@INC is @INC\n";
 
 echo CGI/1.0 test script report:
 echo
