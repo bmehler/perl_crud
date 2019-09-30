@@ -82,7 +82,7 @@ Ich habe einen Symlink von meinem Verzeichnis auf das cgi-bin verzeichnis erstel
 Nun können wir das TestSkript nochmal mit dem Virtual Host aufrufen.
 
 ```
-http://perlcrud.localhost.com/cgi-bin/test-cgi
+http://perlcrud.localhost.com/cgi-bin/perlcrud/test-cgi.pl
 ```
 
 Wir erhalten wieder die Ausgabe des test Skripts im Browser.
@@ -93,8 +93,35 @@ Da MAMP standardmäßig mit MySql ausgeliefert wird, müssen wir zunächst das D
 
 Darüber hinaus müssen wir noch das DBD::mysql installieren. Dieses ist dann für das Arbeiten unter Perl mit MySql verantwortlich.
 
-Unter folgendem Pfad sehen wir welche Module installiert sind
+Hierzu gehen wir wie folgt vor:
 
 ```
- /Applications/MAMP/Library/lib/perl5/site_perl/5.24.0/darwin-2level
+cd /Applications/MAMP/Library/bin
+mysql_config cpan install DBD::mysql
 ```
+
+dann können wir uns das cpan Modul ansehen
+
+```
+cd .cpan/build/
+ls -la
+```
+
+Nun gehen wir in unseren DBD Mysql build
+
+```
+cd .cpan/build/DBD-mysql-***
+```
+
+Nun installieren wir die DBD MySql und machen einen Test
+
+```
+sudo perl Makefile.PL --testuser='root' -testpassword='root' --mysql_config=/Applications/MAMP/Library/bin/mysql_config
+```
+
+
+DBD Test
+
+Wenn Internal Server Error - Permissions setzen
+
+chmod 755 db_test.pl
