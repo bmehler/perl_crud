@@ -87,7 +87,7 @@ http://perlcrud.localhost.com/cgi-bin/perlcrud/test-cgi.pl
 
 Wir erhalten wieder die Ausgabe des test Skripts im Browser.
 
-## Installation der CPAN Module für die Datenbank
+## Installation der CPAN Module für die Datenbank (Beta Installation von DBD::mysql funktioniert nicht!!!)
 
 Da MAMP standardmäßig mit MySql ausgeliefert wird, müssen wir zunächst das DBI Paket, welches das generelle Abstraction Layer für das Arbeiten unter Perl mit Datenbanken handhabt, installieren.
 
@@ -119,9 +119,26 @@ Nun installieren wir die DBD MySql und machen einen Test
 sudo perl Makefile.PL --testuser='root' -testpassword='root' --mysql_config=/Applications/MAMP/Library/bin/mysql_config
 ```
 
+Leider wirft make einen Fehler den ich nicht lösen kann!!!!!!
 
-DBD Test
+```
+bdimp.c:2006:19: error: use of undeclared identifier 'SSL_MODE_REQUIRED'
+              ssl_mode = SSL_MODE_REQUIRED;
+                         ^
+dbdimp.c:2007:32: error: use of undeclared identifier 'MYSQL_OPT_SSL_MODE'
+              if (mysql_options(sock, MYSQL_OPT_SSL_MODE, &ssl_mode) != 0) {
+                                      ^
+dbdimp.c:3207:24: warning: incompatible pointer types assigning to 'my_bool *' (aka 'char *') from 'bool *' [-Wincompatible-pointer-types]
+          bind->is_null=      (_Bool*) &(fbind->is_null);
+```
 
-Wenn Internal Server Error - Permissions setzen
+## Dependencies
 
-chmod 755 db_test.pl
+Die Anwendung benötigt folgende CPAN Module:
+
+- Data::FormValidator;
+- HTML::Template::Associate;
+- CGI;
+
+## Beispiele der Anwendung (Screenshots)
+

@@ -1,0 +1,23 @@
+/* Move down content because we have a fixed navbar that is 3.5rem tall */
+body {
+  padding-top: 5.5rem;
+}
+
+.main {
+  padding-top: 4em;
+}
+
+.table {
+  margin-top: 30px;
+}
+
+.item-actions {
+  text-align: center;
+}
+
+.btn-group-xs > .btn, .btn-xs {
+  padding  : .45rem .5rem;
+  font-size  : .775rem;
+  line-height  : .5;
+  border-radius : .2rem;
+}

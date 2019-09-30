@@ -1,0 +1,66 @@
+<TMPL_INCLUDE NAME="../layouts/header.tmpl">
+<TMPL_INCLUDE NAME="../layouts/navigation.tmpl">
+<div class="container main">
+  <div class="row">
+    <div class="col-md-12">
+      <TMPL_IF NAME="CREATED">
+        <TMPL_INCLUDE NAME="../partials/alerts/create.tmpl">
+      </TMPL_IF>
+      <TMPL_IF NAME="UPDATED">
+        <TMPL_INCLUDE NAME="../partials/alerts/edit.tmpl">
+      </TMPL_IF>
+      <TMPL_IF NAME="DELETED">
+        <TMPL_INCLUDE NAME="../partials/alerts/delete.tmpl">
+      </TMPL_IF>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <h3>Mitarbeiterliste</h3>
+    </div>
+    <div class="col-md-4">
+      <input class="form-control form-control-lg" type="text" id="searchInput" placeholder="Search">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Vorname</th>
+          <th scope="col">Position</th>
+          <th scope="col">Gehalt</th>
+          <th class="text-center" scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody id="fbody">
+      <TMPL_LOOP NAME="PERSON_DATA">
+        <tr>  
+          <td><TMPL_VAR NAME="ID"></td>
+          <td><TMPL_VAR NAME="name"></td>
+          <td><TMPL_VAR NAME="vorname"></td>
+          <td><TMPL_VAR NAME="position"></td>
+          <td><TMPL_VAR NAME="gehalt"> <i class="fas fa-euro-sign"></i></td>
+          <td>
+            <div class="item-actions">
+              <a href="cgi-bin/perl-bootstrap-crud/modules/actions/show.pl?person=<TMPL_VAR NAME="ID">" class="btn btn-success btn-xs pull-right margin-right"><i class="fa fa-eye" aria-hidden="true"></i></a>
+              <a href="cgi-bin/perl-bootstrap-crud/modules/actions/editForm.pl?person=<TMPL_VAR NAME="ID">" class="btn btn-primary btn-xs pull-right margin-right"><i class="fas fa-edit"></i></a>
+              <a href="" data-toggle="modal" data-target="#exampleModal-<TMPL_VAR NAME="ID">" class="btn btn-warning btn-xs pull-right"><i class="fa fa-trash" aria-hidden="true"></i></a>
+            </div>
+          </td>
+          <TMPL_INCLUDE NAME="../partials/modal.tmpl">
+        </tr>
+      </TMPL_LOOP>
+      </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <a class="btn btn-primary btn-md" href="cgi-bin/perl-bootstrap-crud/modules/actions/createForm.pl" role="button"><i class="fas fa-plus"></i> Neuer Mitarbeiter</a>
+    </div>
+  </div>  
+</div>
+<TMPL_INCLUDE NAME="../layouts/footer.tmpl">

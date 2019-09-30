@@ -1,0 +1,28 @@
+<TMPL_INCLUDE NAME="../layouts/header.tmpl">
+<TMPL_INCLUDE NAME="../layouts/navigation.tmpl">
+<div class="container main">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card border-light mb-3">
+        <div class="card-header">Mitarbeiterdaten</div>
+        <div class="card-body">
+          <h4 class="card-title"><TMPL_VAR NAME=VORNAME> <TMPL_VAR NAME=NAME></h4>
+          <p class="card-text">
+            <dl class="row">
+              <dt class="col-sm-3">Position:</dt>
+              <dd class="col-sm-9"><TMPL_VAR NAME=POSITION></dd>
+              <dt class="col-sm-3">Gehalt:</dt>
+              <dd class="col-sm-9"><TMPL_VAR NAME=GEHALT> <i class="fas fa-euro-sign"></i></dd>
+            </dl>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+     <a class="btn btn-primary btn-md" href="http://perlcrud.localhost.com/" role="button"><i class="far fa-caret-square-left"></i> Zurück zur Übersicht</a>
+    </div>
+  </div>
+</div>
+<TMPL_INCLUDE NAME="../layouts/footer.tmpl">

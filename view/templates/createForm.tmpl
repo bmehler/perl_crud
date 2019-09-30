@@ -1,0 +1,14 @@
+<TMPL_INCLUDE NAME="../layouts/header.tmpl">
+<TMPL_INCLUDE NAME="../layouts/navigation.tmpl">
+<div class="container main">
+  <div class="row">
+    <div class="col-md-12">
+      <h3>Mitarbeiter anlegen</h3>
+      <form action="create.pl" method="post">
+       <TMPL_INCLUDE NAME="../partials/form.tmpl">
+        <button type="submit" name="submit" class="btn btn-primary btn-md"> Anlegen</button>
+      </form>
+    </div>
+  </div>
+</div>
+<TMPL_INCLUDE NAME="../layouts/footer.tmpl">
