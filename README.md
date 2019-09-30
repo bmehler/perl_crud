@@ -142,3 +142,14 @@ Die Anwendung benötigt folgende CPAN Module:
 
 ## Beispiele der Anwendung (Screenshots)
 
+### Alle Mitarbeiter anzeigen
+
+![alt text](https://github.com/bmehler/perl_crud/blob/develop/images/Bildschirmfoto%202019-09-30%20um%2016.15.40.png?raw=true?raw=true?raw=true "Alle Mitarbeiter anzeigen")
+
+### Neuen Mitarbeiter anlegen
+
+![alt text](https://github.com/bmehler/perl_crud/blob/develop/images/Bildschirmfoto%202019-09-30%20um%2016.11.59.png?raw=true "Mitarbeiter anlegen")
+
+### Mitarbeiter löschen
+
+![alt text](https://github.com/bmehler/perl_crud/blob/develop/images/Bildschirmfoto%202019-09-30%20um%2016.12.16.png?raw=true?raw=true "Mitarbeiter löschen")
